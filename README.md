@@ -1,1 +1,2 @@
 # holbertonschool-printf
+printf function
