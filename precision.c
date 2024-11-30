@@ -1,4 +1,4 @@
-#include "main.h"
+#include "main1.h"
 
 /**
  * get_precision - Calculates the precision for printing
