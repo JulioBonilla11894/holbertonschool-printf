@@ -60,4 +60,3 @@ Authors that contributed to this project :
 • Aurelio Pagan 
 
 If you’d like to contribute, please fork this repository, make your changes, and submit a pull request.
- 
