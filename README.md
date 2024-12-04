@@ -6,22 +6,32 @@ ________________________________________________________________________________
 Table of Contents:
 
    • Features
+   
    • Getting Started
+   
    • Usage
+   
    • Supported Format Specifiers
+   
    • Examples
+   
    • Contributing
 
 ____________________________________________________________________________________________________________________
  
 Features: 
+
 	• Handles basic and advanced format specifiers (e.g., %c, %s, %d, %i, %u, %x, %X).
+ 
 	• Custom logic for precision, width, and flags.
+ 
 	• Robust error handling.
+ 
 	• Optimized for performance and memory usage.
 _____________________________________________________________________________________________________________________
 
 Getting Started:
+
 To compile and use this project we will need:
 
 • A GCC compiler: 
@@ -46,17 +56,24 @@ ________________________________________________________________________________
 Examples:
 
 • _printf("%c\n", 'Z');                       //Outputs: Z
+
 • _printf("%s\n", "Hello, World!");          //Outputs: Hello, World!
+
 • _printf("Number: %d\n", 0948);            //Outputs: Number: 0948
+
 • _printf("Hex: %x\n", 255);               //Outputs: Hex: ff
+
 • _printf ("f\n", 3.14);                  //Outputs: 3.14
 _____________________________________________________________________________________________________________________
 
 Contributors:
+
 Authors that contributed to this project : 
 
-• Emanuel Mendoza 
-• Julio Bonilla 
+• Emanuel Mendoza
+
+• Julio Bonilla
+
 • Aurelio Pagan 
 
 If you’d like to contribute, please fork this repository, make your changes, and submit a pull request.
