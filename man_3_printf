@@ -1,0 +1,187 @@
+.\" Creating our _printf function
+.TH _PRINTF "2024-11-27" "0.1" "Library functions manual"
+
+.SH NAME
+.B _printf \- This is a custom printf function with the same functionality as the standard library function printf.
+
+
+.SH SYNOPSIS
+
+#include "main.h"
+
+int _printf(const char *format, ...);                                                                                                                                                                                                                       
+.SH DESCRIPTION
+
+The printf function produces output according to the specified format string. The format argument specifies a sequence of characters and conversion specifiers, which determine how subsequent arguments are formatted and displayed.
+
+Plain text in the format string is printed as-is, while format specifiers (beginning with %) are replaced with corresponding argument values.
+
+Common format specifiers include: 
+.TP  
+.B %d or %i   - signed integer
+
+.TP             
+.B %u 
+- unsigned integer
+
+.TP              
+.B %f 
+- floating-point number
+
+.TP
+.B %s 
+- string
+
+.TP
+.B %c 
+- character
+ 
+.TP
+.B %% 
+- literal %
+
+The printf function writes the resulting output to the standard output stream and returns the number of characters written, or a negative value on error.
+
+
+.SS Compilation
+
+.P
+.RS
+#include "main.h"
+
+$ gcc -Wall -Werror -Wextra -pedantic -Wno-format *.c
+$ gcc -Wall -Werror -Wextra -pedantic -g -Wno-format *.c (for gdb debbuging)
+.RE
+
+.SS Printing
+.RS
+
+int _printf(const char *format, ...);
+
+int: The return type of the function
+_printf: The name of the function, this is a customized function of printf.
+
+const char *format : A constant character pointer that points to a function
+that cannot be modified by the function it represent the format string, which
+contain plain text to be printed and format specifiers(ex. %d,%s) that dictate
+how the arguments in the function call should be formatted and displayed.
+
+ The format is an optional name to describe the purpose of the function.The three 
+points(...) indicate that the function receives a variable number of arguments.
+
+.SS Example
+
+.RS
+
+.B Input to the function
+.PP
+_printf("Hello!, I am %s and I am currently %d years old.\n", Emanuel, 29);
+.PP
+.B Output of the function
+.PP
+Hello!, I am Emanuel and I am currently 29 years old.
+.RE
+
+.SS Return Value
+
+Returns the number of characters successfully printed
+Example: If _printf outputs 567843 it would return 6.
+
+.SH FLAG SPECIFIERS
+The flags modify the behaviour of conversion specifiers:
+- (space): Inserts a space before positive numbers.
++ : Always shows the sign of a number.
+# : Alternative form for certain conversions
+
+
+.SH THE LENGTH MODIFIERS
+Lenght modifiers specify the size of the argument:
+h : Short integer.
+l :Long integer.
+ll: Long long integer.
+
+
+.SH THE CONVERSION SPECIFIERS
+These placeholders specify how data should be interpreted or formatted
+in the output.Here is an overview of common conversion specifiers.
+
+.RS
+These are the arguments handled by conversion specifiers:
+
+.TP
+.B %d, %i
+- %d and i% these specifiers are  used to signed decimal integer.
+  Example: _printf ("I have %d dollars in my pocket\n", 20);
+  Output: I have 20 dollars in my pocket.
+   
+.TP
+.B %c
+- The format specifier %c use an integer or char argument converted to unsigned char.
+  Example: _printf("My grade was an %c in English class\n", A);
+  Output: My grade was an A in English class.
+
+.TP
+.B %s
+- string argument. _printf handles s conversion specifier if the argument value is
+  not a pointer to a literal string.
+  Example: char character[] = "Emanuel";
+  _printf("My name is %s, nice to meet you!\n", character);
+  Output: My name is Emanuel, nice to meet you!
+
+.TP
+.B %f
+- Format specifier to work with float decimals and double numbers.
+  Example: _printf("The pi value is %f", 3.14);
+  Output: The pi value is 3.14.
+
+.TP
+
+.B %o, %x, %u, %X
+- unsigned int argument converted to unsigned octal (o), unsigned decimal (u),
+unsigned hexadecimal notation (x) for lower case and (X) for upper case
+
+Example for %o: unsigned int num = 123;
+_printf("Octal: %o\n", num); --> Output: 173
+
+Example for %x: unsigned int num = 123;
+_printf("Hexadecimal (lowercase): %x\n", num); --> Output: 7b
+
+Example for %X: unsigned int num = 123;
+_printf("Hexadecimal (uppercase): %X\n", num); --> Output: 7B
+
+Example for %u:int num = -123 
+unsigned int unum = 123;
+_printf("Unsigned (negative value): %u\n", num); --> Output:4294967173
+_printf("Unsigned (positive value): %u\n", unum);--> Output:123
+   
+.TP
+.B %p
+- The pointer is printed in hexidecimal format preceded by '0x'.
+  Example: int num 30;
+           int *ptr = &num;
+    _printf("The adress of the variable num is %p", &num);
+
+.TP
+.B %b
+- Binary representation of an unsigned integer.
+Example: _printf("Binary: %b\n", 10); --> Output: 1010
+
+.TP
+.B %r
+Reverse string
+Example: _printf("Reversed string: %r\n", "Emanuel"); --> leuname
+
+.TP
+.B %R
+ROT13-encoded string
+Example: _printf("ROT13 string: %R\n", "Emanuel"); --> Output: ROT13 string: Rznahry
+
+.RE
+
+.P
+
+.SH "AUTHORS"
+
+Emanuel Mendoza, Julio Bonilla and  Aurelio Pagan are the primary contributor to this project,
+responsible for its development and testing.
+

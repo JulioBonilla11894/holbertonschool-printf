@@ -1,11 +1,11 @@
 #ifndef MAIN_H
 #define MAIN_H
 
-#include <stdarg.h> /* For va_list, va_start, va_end */
-#include <unistd.h> /* For write */
+#include <stdarg.h>
 
-/* Function prototype for _printf */
+int manage_integer(va_list args);
+int manage_char(va_list args);
+int manage_string(va_list args);
 int _printf(const char *format, ...);
 
 #endif /* MAIN_H */
-
